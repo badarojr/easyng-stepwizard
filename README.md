@@ -39,11 +39,11 @@ There are only two directives, both used as elements: `easy-step-wizard` and `ea
 `easy-step` options:
 - `header`: The header to your step.
 - `description`: The description to your step.
-- `on-next`: Execute a action when the 'Next' button is clicked.
+- `on-next`: Execute an action when the 'Next' button is clicked.
 - `next-if`: Condition for moving forward. Default `true`.
 - `text-next`: Text for the button. Default `Next`.
 - `class-next`: Sets the classes for the button. E.g.: ``` class-next="btn btn-primary" ```.
-- `on-previous`: Execute a action when the 'Back' button is clicked.
+- `on-previous`: Execute an action when the 'Back' button is clicked.
 - `previous-if`: Condition for moving backwards. Default `true`.
 - `text-previous`: Text for the button. Default `Back`.
 - `class-previous`: Sets the classes for the button. E.g.: ``` class-previous="btn btn-primary" ```.
@@ -67,7 +67,7 @@ E.g.:
 
 # Example
 
-There is a example folder in the project showing how to use the step-wizard.
+There is an example folder in the project showing how to use the step-wizard.
 
 # Author
 
