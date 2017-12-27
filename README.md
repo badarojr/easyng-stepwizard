@@ -6,7 +6,7 @@ Easy Step-Wizard for [AngularJS](https://angularjs.org/)
 
 This version requires AngularJS 1.x version.
 
-### Instalation
+### Installation
 
 Download or clone the repository, then copy the files from `dist/` to your project directory.
 
