@@ -64,6 +64,7 @@ E.g.:
 	HTML:
 
 	<easy-step-wizard selector="mySelector">...</easy-step-wizard>
+
 # Example
 
 There is a example folder in the project showing how to use the step-wizard.
