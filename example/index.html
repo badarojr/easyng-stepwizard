@@ -1,0 +1,96 @@
+<html ng-app="exampleApp" ng-cloak>
+  <head>
+    <link href="./libs/bootstrap.min.css" rel="stylesheet">
+    <link href="../dist/easy-step-wizard.css" rel="stylesheet">
+  </head>
+  <body ng-controller="ExampleCtrl as ctrl">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <h1 style="text-align: center">{{title}}</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+          <easy-step-wizard class-next="btn btn-primary" class-previous="btn btn-default" selector="steps">
+            <easy-step header="step1.header" description="step1.description" next-if="step1.next">
+              <form ng-submit="signUp()">
+                <div class="row">
+                  <div class="col-sm-offset-3 col-sm-6">
+                    <div class="form-group">
+                      <label>Here is your header</label>
+                      <input type="text" class="form-control" ng-model="step1.header" ng-required="true" />
+                    </div>
+                    <div class="form-group">
+                      <label>Email</label>
+                      <input type="email" class="form-control" ng-model="step1.email" ng-required="true" />
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="btn btn-success">Sign up to move foward</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </easy-step>
+            <easy-step header="step2.header" description="step2.description" 
+              previous-if="step2.prev" next-if="step2.next" on-previous="step2.onPrev()">
+              <div class="row">
+                <div class="col-sm-offset-3 col-sm-6">
+                  <div class="form-group">
+                    <label><input type="checkbox" ng-model="step2.next"/> Check me!!</label>
+                  </div>
+                  <div class="form-group">
+                    <form>
+                        <label>Can I go back?</label><br/>
+                        <label><input type="radio" ng-model="step2.prev" ng-value="false"/>No</label>
+                        <label><input type="radio" ng-model="step2.prev" ng-value="true"/>Yes</label>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </easy-step>
+            <easy-step header="step3.header" description="step3.description" next-if="false">
+              <div class="row">
+                <div class="col-sm-offset-3 col-sm-6">
+                  <div class="form-group">
+                    <label>No problem, you can use this one.</label>
+                    <button type="button" ng-click="steps.next()" class="btn btn-success">NEXT</button>
+                  </div>
+                </div>
+              </div>
+            </easy-step>
+            <easy-step header="step4.header" description="step4.description" next-if="false">
+            </easy-step>
+          </easy-step-wizard>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./libs/jquery.min.js"></script>
+  <script src="./libs/bootstrap.min.js"></script>
+  <script src="./libs/angular.min.js"></script>
+  <script src="../dist/easy-step-wizard.js"></script>
+  <script type="text/javascript">
+    (function() {
+      'use strict'
+      angular.module('exampleApp',['easy.stepwizard'])
+        .controller('ExampleCtrl', ['$scope', function($scope) {
+          $scope.steps = {}; // use for access the selector actions (select/next/previous).
+          $scope.title = 'Easy to use!';
+
+          $scope.step1 = { header: 'Sign up!', description: 'Start using this awesome tool right now!' };
+          $scope.step2 = { header: 'Almost done!', description: 'Just check the box to continue. You can do it!' };
+          $scope.step3 = { header: 'Oops!', description: 'The default buttons are not available :(' };
+          $scope.step4 = { header: 'Ta Daam!', description: 'Easy, right? :)' };
+
+          $scope.step2.prev = true;
+          $scope.signUp = function() {
+            $scope.step1.next = true;
+          };
+          $scope.step2.onPrev = function() {
+            alert('I see you\'re going back...');
+          };
+      }]);
+    })()
+  </script>
+</html>

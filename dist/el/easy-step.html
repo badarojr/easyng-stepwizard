@@ -1,0 +1,19 @@
+<div ng-show="selected">
+  <div id="sw-step-actions">
+    <div id="sw-actions">
+      <div class="sw-action">
+	    <button id="sw-step-previous-{{index}}" type="button" class="sw-action-previous {{classPrevious}}"
+	      ng-show="previousIf" ng-click="wizard.previous()">
+	      <span translate>{{textPrevious}}</span>
+    	</button>
+	  </div>
+      <div class="sw-action">
+        <button id="sw-step-next-{{index}}" type="button" class="sw-action-next {{classNext}}" 
+          ng-show="nextIf" ng-click="wizard.next()">
+          <span translate>{{textNext}}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div id="sw-step-{{index}}" ng-transclude></div>
+</div>

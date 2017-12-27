@@ -1,0 +1,17 @@
+<div id="sw-header" ng-cloak>
+  <div id="sw-steps">
+    <div id="sw-progress"/>
+    <div id="sw-step-selectors">
+      <div class="sw-step-selector" ng-repeat="step in steps">
+        <span ng-click="stepSelector.select(step)" ng-class="{ 'active': step.selected || step.done, 'disabled': !step.enabled }">
+          {{$index + 1}}
+        </span>
+      </div>
+    </div>
+  </div>
+  <div id="sw-header-text">
+    <p id="sw-header-title" translate>{{currStep.header}}</p>
+    <p id="sw-header-title-desc" translate>{{currStep.description || " "}}</p>
+  </div>
+</div>
+<div ng-transclude></div>
