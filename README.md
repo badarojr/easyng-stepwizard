@@ -27,15 +27,26 @@ Don't forget to add the CSS link:
 
 There are only two directives, both used as elements: `easy-step-wizard` and `easy-step`.
 
+`easy-step-wizard` options:
+- `next-if`: Global condition to enable the 'Next' button.
+- `text-next`: Global text for the button. Default `Next`.
+- `class-next`: Sets the classes for the button on all steps. E.g. ```html class-next="btn btn-primary" ```.
+- `previous-if`: Global condition for moving backwards. Default `true`.
+- `text-previous`: Global text for the button. Default `Back`.
+- `class-previous`: Sets the classes for the button. E.g. ```html class-previous="btn btn-primary" ```.
+- `selector`:
+
 `easy-step` options:
-- `title`: The title to your step.
+- `header`: The header to your step.
 - `description`: The description to your step.
-- `next-if`: Condition for moving forward. Default `true`
-- `next-text`: Text for the button. Default `Next`.
-- `next-class`: Sets the classes for the button. E.g. ```html next-class="btn btn-primary" ```
-- `previous-if`: Condition for moving backwards. Default `true`
-- `previous-text`: Text for the button. Default `Back`
-- `previous-class`: Sets the classes for the button.
+- `on-next`: Execute a action when the 'Next' button is clicked.
+- `next-if`: Condition for moving forward. Default `true`.
+- `text-next`: Text for the button. Default `Next`.
+- `class-next`: Sets the classes for the button. E.g. ```html class-next="btn btn-primary" ```.
+- `on-previous`: Execute a action when the 'Back' button is clicked.
+- `previous-if`: Condition for moving backwards. Default `true`.
+- `text-previous`: Text for the button. Default `Back`.
+- `class-previous`: Sets the classes for the button. E.g. ```html class-previous="btn btn-primary" ```.
 
 # Author
 
