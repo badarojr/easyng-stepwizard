@@ -57,14 +57,14 @@ There are 3 methods available: `select`, `next` and `previous`.
 
 E.g.:
 
-Controller:
+	Controller:
 
-	```$scope.mySelector = {};```
+	$scope.mySelector = {};
 
-HTML:
+	HTML:
 
-	```<easy-step-wizard selector="mySelector">...</easy-step-wizard>```
-#Example
+	<easy-step-wizard selector="mySelector">...</easy-step-wizard>
+# Example
 
 There is a example folder in the project showing how to use the step-wizard.
 
