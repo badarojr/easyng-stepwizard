@@ -30,11 +30,11 @@ There are only two directives, both used as elements: `easy-step-wizard` and `ea
 `easy-step-wizard` options:
 - `next-if`: Global condition to enable the 'Next' button.
 - `text-next`: Global text for the button. Default `Next`.
-- `class-next`: Sets the classes for the button on all steps. E.g. ```html class-next="btn btn-primary" ```.
+- `class-next`: Sets the classes for the button on all steps. E.g.: ``` class-next="btn btn-primary" ```.
 - `previous-if`: Global condition for moving backwards. Default `true`.
 - `text-previous`: Global text for the button. Default `Back`.
-- `class-previous`: Sets the classes for the button. E.g. ```html class-previous="btn btn-primary" ```.
-- `selector`:
+- `class-previous`: Sets the classes for the button. E.g.:  ``` class-previous="btn btn-primary" ```.
+- `selector`: Object to control the actions of the step selector. Must be initialized empty. 
 
 `easy-step` options:
 - `header`: The header to your step.
@@ -42,11 +42,31 @@ There are only two directives, both used as elements: `easy-step-wizard` and `ea
 - `on-next`: Execute a action when the 'Next' button is clicked.
 - `next-if`: Condition for moving forward. Default `true`.
 - `text-next`: Text for the button. Default `Next`.
-- `class-next`: Sets the classes for the button. E.g. ```html class-next="btn btn-primary" ```.
+- `class-next`: Sets the classes for the button. E.g.: ``` class-next="btn btn-primary" ```.
 - `on-previous`: Execute a action when the 'Back' button is clicked.
 - `previous-if`: Condition for moving backwards. Default `true`.
 - `text-previous`: Text for the button. Default `Back`.
-- `class-previous`: Sets the classes for the button. E.g. ```html class-previous="btn btn-primary" ```.
+- `class-previous`: Sets the classes for the button. E.g.: ``` class-previous="btn btn-primary" ```.
+
+### Using the selector
+
+There are 3 methods available: `select`, `next` and `previous`.
+- `select(<step>)`: Selects a specific step.
+- `next()`: Go to the next step.
+- `previous()`: Go to the previous step.
+
+E.g.:
+
+Controller:
+
+	```$scope.mySelector = {};```
+
+HTML:
+
+	```<easy-step-wizard selector="mySelector">...</easy-step-wizard>```
+#Example
+
+There is a example folder in the project showing how to use the step-wizard.
 
 # Author
 
